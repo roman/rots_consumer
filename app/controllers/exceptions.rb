@@ -9,5 +9,9 @@ class Exceptions < Merb::Controller
   def not_acceptable
     render :format => :html
   end
+  
+  def unauthenticated
+    render :template => "exceptions/login", :format => :html
+  end
 
 end
