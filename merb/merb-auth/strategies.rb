@@ -35,10 +35,15 @@ class OpenIDAuth < OpenIDCommon
       user
     else
       attributes = transform_reg_fields_to_user_model_fields(sreg_response.data)
+      attributes[:identity_url] = response.identity_url
       user = User.new(attributes)
-      user.identity_url = response.identity_url
-      user.save
-      user
+      if user.save
+        session[:new_user] = true
+        user
+      else
+        session[:"openid.attributes"] = attributes
+        redirect!(Merb::Router.url(:signup))
+      end
     end
   end
   

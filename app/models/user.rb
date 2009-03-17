@@ -13,5 +13,8 @@ class User
   
   property :id,     Serial
   property :login,  String
+  property :fullname, String
+  property :email, String
+  property :identity_url, String
   
 end

@@ -1,0 +1,8 @@
+<%= error_messages_for @user %>
+<%= form_for @user, :action => '' do %>
+    <%= text_field :login, :label => 'Login' %>
+    <%= text_field :fullname, :label => "Full Name:" %>
+    <%= text_field :email, :label => "Email:" %>
+    <%= hidden_field :identity_url %>
+    <%= submit "Create!" %>
+<% end =%>

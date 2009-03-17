@@ -31,6 +31,8 @@ Merb::Router.prepare do
   # resources :posts
 
   match('/').to(:controller => 'main', :action => 'index').name(:openid)
+  match("/new_user").to(:controller => 'main', :action => 'new_user').name(:new_user)
+  match("/signup").to(:controller => 'main', :action => 'signup').name(:signup)
 
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based
