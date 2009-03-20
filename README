@@ -1,0 +1,13 @@
+= Test OpenID Consumer for the rots Gem.
+
+To get started you will have to do the following commands:
+
+  $ thor merb:gem:install
+
+You will need to install thor (gem install thor), after this you should have all the dependent gems bundled on the project. Next, you would like to execute the OpenID tests using merb_cucumber:
+
+  $ bin/rake features
+
+If you want to check out the test code, go to the features/ folder, and check the features/openid_authentication.feature file and the features/steps/openid_steps.rb, this gem is using Webrat:"http://github.com/brynary/webrat/tree/master"
+
+Send me a message to roman @ github if you have any doubts on how to use this.
