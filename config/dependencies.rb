@@ -35,3 +35,6 @@ dependency "dm-serializer", dm_gems_version
 
 dependency "merb_datamapper", merb_gems_version
 dependency "david-merb_cucumber", :require_as => nil
+dependency "ruby-openid", :require_as => 'openid'
+dependency "rots", :require_as => nil
+dependency "webrat", :require_as => nil
