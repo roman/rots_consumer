@@ -3,6 +3,7 @@ h1. Test OpenID Consumer for the rots Gem.
 To get started you will have to do the following commands:
 
   $ bin/thor merb:gem:install
+  $ bin/rake db:automigrate
 
 After this you should have all the dependent gems bundled on the project. Next, you run the rots server in the project
 
