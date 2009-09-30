@@ -1,0 +1,13 @@
+<%= error_messages_for 'user' %>
+<%= form('user', 
+:input_block => lambda { |record, column| 
+  # For the love of god, don't render dates!
+  return if column.name =~ /created_at|updated_at/
+<<-RESULT
+<p>
+  #{label_tag(column.name, column.human_name)}
+  #{input(record, column.name)}
+</p>
+RESULT
+},
+:submit_value => 'Create User') %>
