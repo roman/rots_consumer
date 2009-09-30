@@ -1,0 +1,48 @@
+h1. merb_cucumber
+
+Merb + Cucumber integration with Webrat support.
+
+h2. Migrating to merb_cucumber 0.5.0
+
+merb_cucumber 0.5.0 now requires cucumber 0.1.13, which introduces some breaking changes. If you were already using
+merb_cucumber, you'll need to do the following:
+
+* Change the last line of bin/cucumber to be:
+
+  Cucumber::CLI.execute ARGV
+
+* Add a cucumber.yml to your Merb.root with the following contents:
+
+  default: --format pretty features
+
+If you experience any problems, please contact me (david) on github.
+
+h2. Requirements
+
+* merb-core >= 1.0.6.1
+* cucumber  >= 0.1.13
+* webrat    >= 0.3.2 (Optional)
+
+h2. First Time
+
+Inside your merb project root, run
+  
+  $ merb-gen cucumber
+  
+For Webrat support, run 
+
+  $ merb-gen cucumber --session-type webrat
+
+This will also install a sample login feature that should pass if you're using merb-auth.
+
+h2. Usage
+
+To execute all the features run
+
+  $ rake features
+
+h2. Notes
+
+* When you are implementing the steps of an scenario, please use the new request test helper, if you try to use the
+  dispatch_to method, it won't work as expected.
+* Webrat methods other than 'visits' are now singular only.
